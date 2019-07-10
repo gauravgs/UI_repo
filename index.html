@@ -178,6 +178,7 @@
       <!-- end container -->
     </div>
     <!-- end section -->
+
     <div id="about" class="section wb">
       <div class="container">
         <div class="row">
@@ -397,7 +398,7 @@
             <div class="serv-blog-cont">
               <h3>Highway material testing</h3>
               <a
-                href="#"
+                href="./highway.html"
                 class="read-more"
                 style="margin-left:30%; margin-top:10%"
                 >book now</a
@@ -521,6 +522,100 @@
 
     <!-- end section -->
 
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 hidden-xs">
+            <div class="message-box">
+              <h2>Our Presence</h2>
+            </div>
+
+            <!-- phone image***************************** -->
+
+            <!-- end messagebox -->
+            <img src="./images/map.jpeg" />
+          </div>
+          <!-- end col -->
+          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+            <div class="message-box ">
+              <div class="hidden-md hidden-lg">
+                <h2>Our Presence</h2>
+              </div>
+              <div class="col-md-12">
+                <div class="" style="margin-top: 0px">
+                  <!-- uvgvhgvghvghvgv**************** -->
+                  <div class="box"></div>
+                  <div class="col-md-3 col-xs-3 col-lg-3">
+                    <div
+                      id="info"
+                      class="message-box"
+                      style="font-size: 65px ; color: black"
+                    ></div>
+                    <br />
+                    <h3><strong>Tests Done</strong></h3>
+                  </div>
+                  <div class="box"></div>
+                  <script>
+                    (function() {
+                      "use strict";
+                      var el = document.getElementById("info");
+                      var el2 = document.getElementsByClassName("box")[0].style;
+                      var temp = el.offsetTop;
+                      var temp1 = window.innerHeight / 2;
+                      var c = 0;
+                      var test = true;
+                      var st;
+                      var delay = 25;
+                      window.onresize = function() {
+                        temp = el.offsetTop;
+                        temp1 = window.innerHeight / 2;
+                        el.className = "";
+                        return temp;
+                      };
+                      window.onscroll = function() {
+                        var y = window.pageYOffset;
+                        if (y > temp - temp1) {
+                          el.className = "newposition";
+                          el2.marginBottom = el.offsetHeight + "px";
+                          if (test === true) {
+                            countup();
+                            test = false;
+                          }
+                        } else {
+                          el.className = "";
+                          el2.marginBottom = 0;
+                        }
+                      };
+                      // terminal value************************************
+
+                      function countup() {
+                        if (c > 1000) {
+                          clearTimeout(st);
+                          return;
+                        }
+                        el.innerHTML = c;
+                        c++;
+                        st = setTimeout(countup, delay);
+                      }
+                    })();
+                  </script>
+                  <!-- uyguyvuvtugvgyvygvyv******************************** -->
+                </div>
+              </div>
+            </div>
+            <!-- end messagebox -->
+          </div>
+          <!-- end col -->
+        </div>
+        <!-- end row -->
+
+        <!-- end row -->
+      </div>
+
+      <!-- end container -->
+      <div class="sep1"></div>
+    </div>
+
     <!-- projects with blog style ************************************ -->
 
     <!-- *********************END OF projects with blog style ************************************ -->
@@ -544,11 +639,15 @@
                     >Testman</span
                   ></a
                 >
+                <br />
                 <p>
-                  Aenean suscipit eget mi act fermentum phasellus vulputate
-                  turpis tincidunt. Aenean suscipit eget. Aenean suscipit eget
-                  mi act fermentum phasellus vulputate turpis tincidunt. Aenean
-                  suscipit ege Aenean suscipit eget mi act fermentum phasellus.
+                  Check out great working opprtunities at TestMan !
+                  <a
+                    href="./career.html"
+                    class="read-more"
+                    style="margin-top: 5%"
+                    >CAREERS</a
+                  >
                 </p>
               </div>
             </div>

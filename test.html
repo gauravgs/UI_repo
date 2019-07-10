@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,height=device-height,initial-scale=1"
+    />
+    <title>untitled document</title>
+    <style media="screen">
+      body {
+        margin: 10em 0;
+        background-color: #666;
+        background-image: linear-gradient(
+            45deg,
+            #fff 25%,
+            transparent 25%,
+            transparent 75%,
+            #fff 75%,
+            #fff
+          ),
+          linear-gradient(
+            -45deg,
+            #fff 25%,
+            transparent 25%,
+            transparent 75%,
+            #fff 75%,
+            #fff
+          );
+        background-size: 4em 4em;
+        background-attachment: fixed;
+      }
+      .box {
+        min-height: 50em;
+        padding: 1em;
+        margin: auto;
+        border: 0.1em solid #000;
+        background-color: #444;
+        box-sizing: border-box;
+        color: #ccc;
+      }
+      #info {
+        padding: 3em 0;
+        margin: auto;
+        border: 0.1em solid #999;
+        background-color: #fff;
+        box-sizing: border-box;
+        font-size: 2em;
+        text-align: center;
+      }
+      .newposition {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <div id="info"></div>
+    <div class="box"></div>
+    <script>
+      (function() {
+        "use strict";
+        var el = document.getElementById("info");
+        var el2 = document.getElementsByClassName("box")[0].style;
+        var temp = el.offsetTop;
+        var temp1 = window.innerHeight / 2;
+        var c = 0;
+        var test = true;
+        var st;
+        var delay = 25;
+        window.onresize = function() {
+          temp = el.offsetTop;
+          temp1 = window.innerHeight / 2;
+          el.className = "";
+          return temp;
+        };
+        window.onscroll = function() {
+          var y = window.pageYOffset;
+          if (y > temp - temp1) {
+            el.className = "newposition";
+            el2.marginBottom = el.offsetHeight + "px";
+            if (test === true) {
+              countup();
+              test = false;
+            }
+          } else {
+            el.className = "";
+            el2.marginBottom = 0;
+          }
+        };
+        function countup() {
+          if (c > 1000) {
+            clearTimeout(st);
+            return;
+          }
+          el.innerHTML = c;
+          c++;
+          st = setTimeout(countup, delay);
+        }
+      })();
+    </script>
+  </body>
+</html>
